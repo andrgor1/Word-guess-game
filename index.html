@@ -81,29 +81,19 @@
           
 
 
-          var computerGuess = word.length;
-          $('#score').html(score);
-          $.each(alpha.split(''), function(i, val){
-          $('#alpha').append($('<span class="guess">' + val + '</span>'));
-          });
-          $.each(word.split(''), function(i, val){
-          $('#word').append($('<span class="letter" letter="' + val +'"> _ </span>'));
-          });
+          // var computerGuess = word.length;
+          // $('#score').html(score);
+          // $.each(alpha.split(''), function(i, val){
+          // $('#alpha').append($('<span class="guess">' + val + '</span>'));
+          // });
+          // $.each(word.split(''), function(i, val){
+          // $('#word').append($('<span class="letter" letter="' + val +'"> _ </span>'));
+          // });
   
-          var count = $('#word [letter='+$(this).text()+']').each(function(){ $(this).text($(this).attr('letter'));}).length;
-          $(this).removeClass('guess').css('color' , (count > 0 ? 'green' : 'red')).unbind('click');
-          });
-
-
-      //step 3. Show empty letters
-
-
-      //step 4. Determines which key was pressed.
-      var userGuess = event.key;
-
-      //step 4. Set a counter to 10 attempts
-
-          
+          // var count = $('#word [letter='+$(this).text()+']').each(function(){ $(this).text($(this).attr('letter'));}).length;
+          // $(this).removeClass('guess').css('color' , (count > 0 ? 'green' : 'red')).unbind('click');
+          // });
+        
           
                   
 `             `
