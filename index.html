@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	  <meta charset="utf-8">
+	  <title>Guess 80th music game</title>
+      <link rel="stylesheet" href="css/style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+
+  <BODY>
+    <img src="images/80thmusic.jpg"; id="box1">
+
+    <section id="box2">
+
+        
+        <h1>80th the best music decade ever</h1>
+  
+        <p>Press any key to get started!</p>
+
+        <p>Wins: </p>
+ 
+
+        
+        <!--  If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
+        
+           As the user guesses the correct letters, reveal them: `m a d o _  _ a`. -->
+        
+        <p>Number of Guesses Remaining: </p>
+        
+        <p>Letters Already Guessed: </p>
+
+      </section>
+  
+
+      <!-- step 1. array of bands -->
+      <script type="text/javascript">
+          function bands(items)
+            {return items[Math.floor(Math.random()*items.length)];
+            }
+          var items = ["madonna", "genesis", "blondies", "inxs", "queen", "metallica", "prince", "U2", "REM", "aerosmith"];
+
+      //step 2. Generate random number assigned to var bands id
+          var computerGuess = console.log(bands(items));
+
+          var userGuess = event.key;
+
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+                
+          var computerGuess = word.length;
+          $('#score').html(score);
+          $.each(alpha.split(''), function(i, val){
+          $('#alpha').append($('<span class="guess">' + val + '</span>'));
+          });
+          $.each(word.split(''), function(i, val){
+          $('#word').append($('<span class="letter" letter="' + val +'"> _ </span>'));
+          });
+          $('.guess').click(function(){
+          score= score-1;
+          $('#score').html(score);    
+          var count = $('#word [letter='+$(this).text()+']').each(function(){ $(this).text($(this).attr('letter'));}).length;
+          $(this).removeClass('guess').css('color' , (count > 0 ? 'green' : 'red')).unbind('click');
+          });
+
+
+      //step 3. Show empty letters
+
+
+      //step 4. Determines which key was pressed.
+      var userGuess = event.key;
+
+      //step 4. Set a counter to 10 attempts
+
+          
+          
+                  
+`             `
+
+      </script>
+
+   </body>
+</html>
