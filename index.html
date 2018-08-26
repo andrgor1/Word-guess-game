@@ -32,22 +32,55 @@
         <p>Letters Already Guessed: </p>
 
       </section>
-  
-
-      <!-- step 1. array of bands -->
       <script type="text/javascript">
+      
+      //step 1. Create rray of bands and function chosing a band randomly and triger a computer guess.
+      //step 1.1 Add a start on key!!!
+      var items = ["madonna", "genesis", "blondies", "inxs", "queen", "metallica", "prince", "U2", "REM", "aerosmith"];
           function bands(items)
             {return items[Math.floor(Math.random()*items.length)];
             }
-          var items = ["madonna", "genesis", "blondies", "inxs", "queen", "metallica", "prince", "U2", "REM", "aerosmith"];
 
-      //step 2. Generate random number assigned to var bands id
+      //step 2. Log computer guess to the consol 
+      
           var computerGuess = console.log(bands(items));
 
-          var userGuess = event.key;
+      //step 3. Count number of letters in a cimputerGuess band
+         
+           var count = $(bands).val(computerGuess).length;
+            console.log(count);
 
-      // Randomly chooses a choice from the options array. This is the Computer's guess.
-                
+
+      //step 4. Show empty letters on a screen
+
+
+      //step 5. Create variable and function the number of guesses left
+          var score = 12;
+
+      //step 6. Create a var for user to enter key
+
+
+      //step 7. Show entered key on a screen
+      
+      //  var userGuess = event.key;
+
+      //step 8. Compare a guessed key with a computer guess
+
+
+      //step 9. If letter is there, open it and dont count
+          $('.guess').click(function(){
+          score= score-1;
+          $('#score').html(score);  
+
+      //step 10. If letter is not there, count
+
+
+      //step 11. If word is guessed show "Win", If not guessed (counret is on "0", show "lost").
+
+
+          
+
+
           var computerGuess = word.length;
           $('#score').html(score);
           $.each(alpha.split(''), function(i, val){
@@ -56,9 +89,7 @@
           $.each(word.split(''), function(i, val){
           $('#word').append($('<span class="letter" letter="' + val +'"> _ </span>'));
           });
-          $('.guess').click(function(){
-          score= score-1;
-          $('#score').html(score);    
+  
           var count = $('#word [letter='+$(this).text()+']').each(function(){ $(this).text($(this).attr('letter'));}).length;
           $(this).removeClass('guess').css('color' , (count > 0 ? 'green' : 'red')).unbind('click');
           });
